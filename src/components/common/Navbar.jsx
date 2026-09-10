@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 
 import { useCart } from "../../context/CartContext";
 import { useAuth } from "../../context/AuthContext";
+import logo from "../../assets/foodhub_logo.png";
 
 const Navbar = () => {
 
@@ -50,7 +51,16 @@ const Navbar = () => {
                         onClick={closeMenu}
                         className="text-2xl font-bold text-orange-500"
                     >
-                        🍔 FoodHub
+                        <Link
+                            to={isAdmin ? "/admin" : "/"}
+                            className="flex items-center"
+                        >
+                            <img
+                                src={logo}
+                                alt="FoodHub"
+                                className="h-10 w-auto object-contain"
+                            />
+                        </Link>
 
                         {isAdmin && (
                             <span className="text-sm text-gray-500 ml-2">
