@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 const RestaurantCard = ({ restaurant }) => {
 
     return (
-        <div className="bg-white rounded-2xl shadow-md hover:shadow-xl transition duration-300 overflow-hidden border border-gray-100">
+        <div className="restaurant-card bg-white rounded-2xl shadow-md hover:shadow-xl transition duration-300 overflow-hidden border border-gray-100">
 
             {/* Restaurant Header */}
-            <div className="h-40 bg-gradient-to-r from-orange-400 to-orange-600 flex items-center justify-center">
+            <div className="h-40 bg-gradient-to-br from-orange-300 via-orange-400 to-orange-600 flex items-center justify-center">
 
                 <span className="text-7xl">
                     🍽️

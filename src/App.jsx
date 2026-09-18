@@ -1,5 +1,5 @@
 import "./App.css";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 
 import Navbar from "./components/common/Navbar";
 import Footer from "./components/common/Footer";
@@ -28,18 +28,19 @@ import AdminCustomers from "./pages/admin/Customers";
 import { CartProvider } from "./context/CartContext";
 import { AuthProvider } from "./context/AuthContext";
 
-function App() {
-    return (
-        <AuthProvider>
-            <CartProvider>
+function AppContent() {
+    const location = useLocation();
 
+    return (
                 <div className="min-h-screen flex flex-col">
 
                     <Navbar />
 
-                    <main className="flex-grow">
+                    <main className="flex-grow app-main">
 
-                        <Routes>
+                        <div key={location.pathname} className="route-enter">
+
+                        <Routes location={location}>
 
                             {/* =================================
                                 PUBLIC CUSTOMER ROUTES
@@ -150,12 +151,22 @@ function App() {
 
                         </Routes>
 
+                        </div>
+
                     </main>
 
                     <Footer />
 
                 </div>
 
+    );
+}
+
+function App() {
+    return (
+        <AuthProvider>
+            <CartProvider>
+                <AppContent />
             </CartProvider>
         </AuthProvider>
     );

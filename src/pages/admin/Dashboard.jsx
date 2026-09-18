@@ -119,7 +119,7 @@ const Dashboard = () => {
 
                     {/* ORDERS */}
 
-                    <div className="bg-white rounded-xl shadow-md p-6">
+                    <div className="admin-stat-card bg-white rounded-xl shadow-md p-6">
 
                         <div className="flex justify-between">
 
@@ -146,7 +146,7 @@ const Dashboard = () => {
 
                     {/* RESTAURANTS */}
 
-                    <div className="bg-white rounded-xl shadow-md p-6">
+                    <div className="admin-stat-card bg-white rounded-xl shadow-md p-6">
 
                         <div className="flex justify-between">
 
@@ -173,7 +173,7 @@ const Dashboard = () => {
 
                     {/* CUSTOMERS */}
 
-                    <div className="bg-white rounded-xl shadow-md p-6">
+                    <div className="admin-stat-card bg-white rounded-xl shadow-md p-6">
 
                         <div className="flex justify-between">
 
@@ -200,7 +200,7 @@ const Dashboard = () => {
 
                     {/* REVENUE */}
 
-                    <div className="bg-white rounded-xl shadow-md p-6">
+                    <div className="admin-stat-card bg-white rounded-xl shadow-md p-6">
 
                         <div className="flex justify-between">
 
@@ -408,7 +408,7 @@ const StatusCard = ({
 
     return (
 
-        <div className="bg-white rounded-xl shadow-sm p-4 text-center">
+        <div className="admin-stat-card bg-white rounded-xl shadow-sm p-4 text-center">
 
             <div className="text-2xl">
                 {icon}
@@ -442,7 +442,7 @@ const ManagementCard = ({
 
         <Link
             to={link}
-            className="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition block"
+            className="management-card bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition block"
         >
 
             <div className="text-4xl mb-4">

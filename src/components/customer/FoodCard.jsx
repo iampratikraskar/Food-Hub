@@ -27,10 +27,10 @@ const FoodCard = ({ food }) => {
     };
 
     return (
-        <div className="bg-white rounded-2xl shadow-md hover:shadow-xl transition duration-300 overflow-hidden border border-gray-100">
+        <div className="food-card bg-white rounded-2xl shadow-md hover:shadow-xl transition duration-300 overflow-hidden border border-gray-100">
 
             {/* Food Image */}
-            <div className="h-48 bg-gradient-to-r from-orange-300 to-orange-500 flex items-center justify-center">
+            <div className="h-48 bg-gradient-to-br from-orange-200 via-orange-300 to-orange-500 flex items-center justify-center overflow-hidden">
 
                 {food.imageUrl ? (
                     <img

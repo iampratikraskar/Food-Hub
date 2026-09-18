@@ -1,0 +1,165 @@
+:root {
+  --brand: #f97316;
+  --brand-dark: #d9550a;
+  --ink: #172033;
+  --muted: #667085;
+  --surface: #ffffff;
+  --line: #edf0f5;
+  --shadow-sm: 0 5px 18px rgba(31, 41, 55, .06);
+  --shadow-md: 0 16px 40px rgba(31, 41, 55, .10);
+}
+
+.app-main {
+  overflow: hidden;
+}
+
+.route-enter {
+  animation: route-enter .42s cubic-bezier(.22, 1, .36, 1) both;
+}
+
+@keyframes route-enter {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float-soft {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-9px); }
+}
+
+@keyframes glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(249, 115, 22, .28); }
+  50% { box-shadow: 0 0 0 10px rgba(249, 115, 22, 0); }
+}
+
+/* Shared page surfaces, used across customer, auth and admin routes. */
+.bg-gray-50 {
+  background-color: #fffaf6 !important;
+  background-image: radial-gradient(circle at 10% 0%, rgba(255, 215, 180, .27), transparent 27rem);
+}
+
+.bg-white {
+  border-color: var(--line);
+}
+
+.shadow-md,
+.shadow-sm {
+  box-shadow: var(--shadow-sm);
+}
+
+.rounded-xl,
+.rounded-2xl {
+  border-color: var(--line);
+}
+
+/* Stronger hierarchy for the existing orange page headers. */
+.bg-orange-500 {
+  background-color: var(--brand) !important;
+}
+
+section.bg-orange-500,
+div.bg-orange-500.text-white {
+  background-image: linear-gradient(118deg, #f97316 0%, #ed6a18 48%, #d9550a 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+section.bg-orange-500::after,
+div.bg-orange-500.text-white::after {
+  content: "";
+  position: absolute;
+  width: 24rem;
+  height: 24rem;
+  right: -8rem;
+  top: -16rem;
+  border: 1px solid rgba(255,255,255,.18);
+  border-radius: 999px;
+  pointer-events: none;
+}
+
+button,
+a[class*="bg-orange-"],
+a[class*="border-orange-"] {
+  transition: transform .2s ease, box-shadow .2s ease, background-color .2s ease, color .2s ease, border-color .2s ease !important;
+}
+
+button:not(:disabled):hover,
+a[class*="bg-orange-"]:hover {
+  transform: translateY(-2px);
+}
+
+button.bg-orange-500:not(:disabled):hover,
+a.bg-orange-500:hover {
+  box-shadow: 0 10px 22px rgba(217, 85, 10, .26);
+}
+
+input,
+select,
+textarea {
+  transition: border-color .18s ease, box-shadow .18s ease, background-color .18s ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--brand) !important;
+  box-shadow: 0 0 0 4px rgba(249, 115, 22, .11) !important;
+}
+
+table thead {
+  background: #fff5ed !important;
+  color: #9a3412;
+}
+
+table tbody tr {
+  transition: background-color .18s ease;
+}
+
+table tbody tr:hover {
+  background: #fffaf6 !important;
+}
+
+.food-card,
+.restaurant-card,
+.admin-stat-card,
+.management-card {
+  animation: card-enter .5s cubic-bezier(.22, 1, .36, 1) both;
+}
+
+@keyframes card-enter {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.food-card:hover,
+.restaurant-card:hover,
+.admin-stat-card:hover,
+.management-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md) !important;
+}
+
+.food-card img {
+  transition: transform .5s cubic-bezier(.22, 1, .36, 1);
+}
+
+.food-card:hover img {
+  transform: scale(1.07);
+}
+
+.hero-visual {
+  animation: float-soft 4.8s ease-in-out infinite;
+}
+
+.cart-count {
+  animation: glow 2.2s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+  }
+}

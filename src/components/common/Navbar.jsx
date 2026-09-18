@@ -37,28 +37,25 @@ const Navbar = () => {
 
     return (
 
-        <nav className="bg-white shadow-md sticky top-0 z-50">
+        <nav className="bg-white/90 backdrop-blur-xl border-b border-orange-100/70 shadow-sm sticky top-0 z-50">
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6">
 
-                <div className="flex justify-between items-center h-16">
+                <div className="flex justify-between items-center h-[4.5rem]">
 
 
                     {/* ================= LOGO ================= */}
 
-                    <Link
-                        to={isAdmin ? "/admin" : "/"}
-                        onClick={closeMenu}
-                        className="text-2xl font-bold text-orange-500"
-                    >
+                    <div className="flex items-center">
                         <Link
                             to={isAdmin ? "/admin" : "/"}
+                            onClick={closeMenu}
                             className="flex items-center"
                         >
                             <img
                                 src={logo}
                                 alt="FoodHub"
-                                className="h-10 w-auto object-contain"
+                                className="h-11 w-auto object-contain transition-transform duration-200 hover:scale-105"
                             />
                         </Link>
 
@@ -68,7 +65,7 @@ const Navbar = () => {
                             </span>
                         )}
 
-                    </Link>
+                    </div>
 
 
                     {/* ================= DESKTOP ================= */}
@@ -115,7 +112,7 @@ const Navbar = () => {
 
                                     {totalItems > 0 && (
 
-                                        <span className="absolute -top-3 -right-4 bg-orange-500 text-white text-xs font-bold rounded-full min-w-5 h-5 flex items-center justify-center px-1">
+                                        <span className="cart-count absolute -top-3 -right-4 bg-orange-500 text-white text-xs font-bold rounded-full min-w-5 h-5 flex items-center justify-center px-1">
                                             {totalItems}
                                         </span>
 
@@ -223,7 +220,7 @@ const Navbar = () => {
 
                 {menuOpen && (
 
-                    <div className="md:hidden border-t border-gray-100 py-4">
+                    <div className="md:hidden border-t border-orange-100 py-4 animate-[route-enter_.25s_ease-out_both]">
 
                         <div className="flex flex-col gap-2">
 
